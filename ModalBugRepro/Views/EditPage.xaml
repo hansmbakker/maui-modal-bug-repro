@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:ModalBugRepro.ViewModels"
-			 x:Class="ModalBugRepro.Views.EditPage"
-			 x:DataType="vm:ListDetailDetailViewModel">
-	<ScrollView>
-		<VerticalStackLayout Margin="12">
-			<Label Text="{Binding Item.Title}" FontSize="Header" />
-			<Label Text="{Binding Item.Description}" FontSize="Default" />
-		</VerticalStackLayout>
-	</ScrollView>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ModalBugRepro.ViewModels"
+             x:Class="ModalBugRepro.Views.EditPage"
+             x:DataType="vm:ListDetailDetailViewModel"
+             Shell.PresentationMode="ModalAnimated"
+             NavigationPage.HasNavigationBar="True"
+             Shell.NavBarIsVisible="True"
+             Title="{Binding Item.Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel"
+                     Command="{Binding ResetCommand}" />
+        <ToolbarItem Text="Save"
+                     Command="{Binding SaveCommand}" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <VerticalStackLayout Margin="12">
+            <Entry Text="{Binding Item.Title}"
+                   FontSize="Default" />
+            <Entry Text="{Binding Item.Description}"
+                   FontSize="Default" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

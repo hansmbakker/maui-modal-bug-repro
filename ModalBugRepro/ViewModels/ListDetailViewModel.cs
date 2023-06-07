@@ -49,7 +49,7 @@ public partial class ListDetailViewModel : BaseViewModel
 	[RelayCommand]
 	private async void GoToDetails(SampleItem item)
 	{
-		await Shell.Current.GoToAsync(nameof(ListDetailDetailPage), true, new Dictionary<string, object>
+		await Shell.Current.GoToAsync("details", true, new Dictionary<string, object>
 		{
 			{ "Item", item }
 		});

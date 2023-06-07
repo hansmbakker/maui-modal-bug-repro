@@ -10,6 +10,7 @@
 		<ShellContent
 			Title="ListDetail"
 			Icon="iconlistdetail.png"
+            Route="listdetail"
 			ContentTemplate="{DataTemplate views:ListDetailPage}" />
 	</TabBar>
 </Shell>
