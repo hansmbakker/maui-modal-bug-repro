@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ModalBugRepro</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -46,19 +46,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\EditPage.xaml.cs">
-	    <DependentUpon>EditPage.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\EditPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+		<PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.4.8333" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.4.8333" />
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">
